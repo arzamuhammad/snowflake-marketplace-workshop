@@ -48,11 +48,64 @@ In this workshop you will publish **4 types of listings** using ONLY the Snowsig
 
 Before you begin, make sure:
 
+### Basic Prerequisites (for FREE listings)
+
 - [ ] You are signed in to **Snowsight** (app.snowflake.com)
 - [ ] You are using the **ACCOUNTADMIN** role (top-left role selector)
 - [ ] The database `NUSATEL_DATA_PRODUCTS` exists with data (admin runs the setup SQL)
 - [ ] You have accepted the **Snowflake Provider & Consumer Terms**:
-  - Go to **Admin** → **Terms & Billing** → accept the Provider terms
+  - Snowsight → **Admin** → **Billing & Terms** → accept the Provider terms
+  - Or via avatar (top-right) → **My Profile** → **Snowflake Provider Terms**
+
+### Additional Prerequisites for PAID Listings
+
+> ⚠️ **Important:** The "Paid" option in Access Type **will not appear** in your dropdown until ALL of these are completed. If you only see "Free" and "Trial" options, it means one of these is missing.
+
+| # | Prerequisite | Where to verify |
+|---|---|---|
+| 1 | **Accept Provider Terms (Monetization version)** | Snowsight → Admin → Billing & Terms → accept the latest Marketplace Provider Terms |
+| 2 | **Provider Profile approved** by Snowflake (not Draft) | Provider Studio → Profiles → status column shows "Approved" |
+| 3 | **Monetization Onboarding case** completed with Snowflake Marketplace Operations | Submit a case at https://snowforce.my.site.com/s/provider-onboarding-case |
+| 4 | **Tax & banking information** submitted (W-9 / W-8BEN, payout account) | Configured by Snowflake during onboarding |
+| 5 | **Account is a paying customer** (not a free Snowflake trial account) | Admin → Billing → check edition |
+
+### Region Considerations
+
+| Region | Paid Listings Supported? |
+|---|---|
+| AWS standard regions (US, EU, AP, **Jakarta AP_SOUTHEAST_3**) | ✅ Yes (after onboarding) |
+| Azure standard regions | ✅ Yes |
+| GCP standard regions | ✅ Yes |
+| VPS (Virtual Private Snowflake) | ❌ Cannot create paid listings |
+| US Government regions | ⚠️ Restricted |
+
+> Region by itself is NOT a blocker for Jakarta AWS — but onboarding still required.
+
+### Onboarding Timeline (for Paid)
+
+```
+1. Contact your Snowflake AE / Business Development partner
+   ↓
+2. Submit Marketplace Operations case
+   ↓
+3. Sign monetization addendum (legal agreement)
+   ↓
+4. Provide tax forms + banking details
+   ↓
+5. Snowflake enables paid listings (~1-2 weeks)
+   ↓
+6. "Paid" option appears in Access Type dropdown
+```
+
+### What If Paid Is Not Available Yet?
+
+For workshops or demos before paid is enabled, use these alternatives:
+
+| Goal | Workaround |
+|---|---|
+| Show paid-like consumer flow | Use **Trial** access type (Limited Trial / Limited Usage Trial) — UI flow is similar |
+| Demonstrate pricing concept | Show pricing plan UI screenshots from Snowflake docs |
+| Real revenue generation | Must complete onboarding first |
 
 ---
 
