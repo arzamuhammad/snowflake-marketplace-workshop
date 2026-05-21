@@ -99,13 +99,75 @@ Before you begin, make sure:
 
 ### What If Paid Is Not Available Yet?
 
-For workshops or demos before paid is enabled, use these alternatives:
+If you only see **Free** and **Trial** in the Access Type dropdown (no **Paid** option), follow these steps:
+
+#### Step 1: Verify Each Prerequisite
+
+Check the 5 prerequisites in the table above one-by-one:
+
+```
+☐ Provider Terms (Monetization) accepted
+☐ Provider Profile approved (not Draft)
+☐ Monetization Onboarding case submitted
+☐ Tax & banking info provided
+☐ Account is paying customer (not Snowflake trial)
+```
+
+#### Step 2: Submit a Marketplace Operations Case
+
+This is the **most important step** to enable Paid listings. Snowflake Marketplace team must manually approve your account for monetization.
+
+**Submit a case here:**
+👉 **https://snowforce.my.site.com/s/provider-onboarding-case**
+
+When filling the case form, provide:
+- **Account identifier:** your Snowflake organization + account name (e.g., `MYORG.PROD_ACCOUNT`)
+- **Region:** e.g., `AWS AP_SOUTHEAST_3 (Jakarta)`
+- **Company name:** e.g., `NusaTel`
+- **Use case:** brief description (e.g., "We want to monetize telco mobility and audience data products on Snowflake Marketplace")
+- **Business contact email**
+- **Technical contact email**
+
+#### Step 3: Engage Your Snowflake AE
+
+Notify your Snowflake **Account Executive (AE)** or **Business Development partner** in parallel:
+- They can fast-track the request internally
+- They can sign you up for the monetization addendum (legal agreement)
+- They will help with tax forms (W-9 / W-8BEN) and banking details for payout
+
+#### Step 4: Wait for Approval (typically 1-2 weeks)
+
+You will receive an email from Snowflake Marketplace Operations confirming:
+- Monetization is enabled on your account
+- Your tax / banking info is processed
+- Paid listings are now allowed
+
+#### Step 5: Verify Paid Option Is Enabled
+
+After approval:
+1. Go to **Provider Studio** → **+ Create Listing**
+2. Open the **Access Type** dropdown
+3. You should now see: **Free**, **Trial**, **Paid** ✅
+
+#### Workshop Workarounds (if Paid not enabled in time)
+
+For workshops or demos before Paid is enabled, use these alternatives:
 
 | Goal | Workaround |
 |---|---|
 | Show paid-like consumer flow | Use **Trial** access type (Limited Trial / Limited Usage Trial) — UI flow is similar |
 | Demonstrate pricing concept | Show pricing plan UI screenshots from Snowflake docs |
 | Real revenue generation | Must complete onboarding first |
+
+#### Troubleshooting Tips
+
+| Symptom | Likely Cause | Fix |
+|---|---|---|
+| Only "Free" and "Trial" visible | Monetization not enabled | Submit Marketplace Ops case (Step 2 above) |
+| Only "Free" visible (no Trial either) | Provider Terms not accepted | Admin → Billing & Terms → accept |
+| "Paid" visible but greyed out | Profile still in Draft status | Submit profile for approval first |
+| Case submitted but no response after 1 week | Follow up with AE | Email AE with case number |
+| Account is on Free Trial of Snowflake | Trial accounts cannot monetize | Upgrade to paying customer |
 
 ---
 
