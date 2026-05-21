@@ -163,44 +163,48 @@ Email of your technical / data engineering team. Snowflake sends notifications a
 
 **Scenario:** NusaTel publishes network coverage data for free — for ecosystem engagement and lead generation.
 
+> **New UI:** The current Provider Studio shows a **Publishing Checklist** sidebar on the right. Each item turns green ✓ as you complete it. The **Submit for approval** button activates only when all required items are green.
+
 ### Step C1: Start Creating the Listing
 
 1. Go to **Provider Studio** → **Listings** tab
 2. Click **+ Create Listing**
 3. Select **Snowflake Marketplace** (this makes it public)
 
-### Step C2: Basic Information
+### Step C2: Listing Title
 
-| Field | What to Enter |
-|---|---|
-| Title | `Indonesia 4G/5G Network Coverage Analytics` |
-| Subtitle | `Daily tower performance and signal quality metrics across Indonesia` |
-| Profile | Select `NusaTel Data` (created in Part B) |
+- Enter title at the top: `Indonesia 4G/5G Network Coverage Analytics - DEMO`
+- ✓ This auto-marks **"Add listing name"** in the checklist
 
-### Step C3: Attach the Data Product
+### Step C3: Add Subtitle
 
-1. Click **Add data product**
+- Click **"Add subtitle"** below the title
+- Example: `Daily 4G/5G tower performance and signal quality metrics across Indonesia`
+- ✓ Auto-marks **"Add subtitle"**
+
+### Step C4: Select Publishing Profile
+
+- In the profile selector below the title, choose **NusaTel Data**
+- ✓ Auto-marks **"Select publishing profile"**
+
+### Step C5: Add Data Product (top-right blue card)
+
+1. Click the blue **Add data product** button
 2. Click **+ Select**
-3. Navigate to: `NUSATEL_DATA_PRODUCTS` → `NETWORK` → select the view `V_DAILY_COVERAGE`
+3. Navigate: `NUSATEL_DATA_PRODUCTS` → `NETWORK` → check `V_DAILY_COVERAGE`
 4. Click **Done**
+- ✓ Auto-marks **"Select product type"**
 
-> Snowflake will automatically create a Secure Share containing this view.
+### Step C6: Select Access Type
 
-### Step C4: Set Access Type
+- The **Access type** dropdown (under data product) becomes active
+- Select **Free**
+- ✓ Auto-marks **"Select access type"**
 
-- In the **Access type** dropdown, select **Free**
+### Step C7: Description Tile
 
-### Step C5: Configure Region Availability
-
-1. Scroll to **Region Availability**
-2. Click **Set region availability**
-3. Choose **All Regions** (so any Snowflake customer worldwide can access it)
-4. Click **Done**
-
-### Step C6: Add Description
-
-Write a rich description (supports Markdown):
-
+- Click the **Description** tile in the canvas
+- Paste:
 ```
 Free network coverage dataset from NusaTel providing daily aggregated
 tower performance metrics across Indonesia.
@@ -218,66 +222,127 @@ tower performance metrics across Indonesia.
 - Infrastructure planning
 - Competitive research
 ```
+- Click **Save**
+- ✓ Auto-marks **"Add description"**
 
-### Step C7: Add Data Dictionary (Optional but Recommended)
+### Step C8: Categories Tile
 
-1. Scroll to **Data dictionary**
-2. Click **Add**
-3. Select featured columns (e.g., `technology`, `avg_download_mbps`, `availability_pct`)
-4. Add descriptions for each column
+- Click **Add category**
+- Select up to 3 categories, e.g.: **Telecom**, **Geospatial**, **Marketing**
+- Click **Save**
+- ✓ Auto-marks **"Select up to 3 categories"**
 
-> This helps consumers understand your data before they "Get" it.
+### Step C9: Business Needs Tile
 
-### Step C8: Add Sample Queries
+- Click **Add up to 6 business needs**
+- Select predefined tags from the list, e.g.:
+  - Audience Targeting
+  - Geographic Analysis
+  - Network Performance
+  - Risk Management
+- Click **Save**
+- ✓ Auto-marks **"Add business needs"**
 
-1. Scroll to **Quick Start Examples**
-2. Click **Add** → **SQL Example**
-3. Add 2-3 queries, e.g.:
+### Step C10: Quick Start Examples Tile
 
-**Example 1:**
-- Title: `Average download speed by technology`
-- Query:
-```sql
-SELECT technology,
-       ROUND(AVG(avg_download_mbps), 2) AS avg_download_mbps,
-       ROUND(AVG(avg_latency_ms), 1) AS avg_latency_ms
-FROM V_DAILY_COVERAGE
-WHERE report_date >= CURRENT_DATE() - 7
-GROUP BY 1
-ORDER BY 2 DESC;
-```
+- Click **Add quick start examples**
+- Click **+ SQL Example**
+- Add Example 1:
+  - **Title:** `Average download speed by technology`
+  - **Query:**
+    ```sql
+    SELECT technology,
+           ROUND(AVG(avg_download_mbps), 2) AS avg_download_mbps,
+           ROUND(AVG(avg_latency_ms), 1) AS avg_latency_ms
+    FROM V_DAILY_COVERAGE
+    WHERE report_date >= CURRENT_DATE() - 7
+    GROUP BY 1 ORDER BY 2 DESC;
+    ```
+- Add Example 2:
+  - **Title:** `City coverage ranking`
+  - **Query:**
+    ```sql
+    SELECT city, province,
+           COUNT(DISTINCT tower_id) AS tower_count,
+           ROUND(AVG(availability_pct), 2) AS avg_availability
+    FROM V_DAILY_COVERAGE
+    GROUP BY 1, 2
+    ORDER BY 4 DESC;
+    ```
+- Click **Save**
+- ✓ Auto-marks **"Fill in Quick Start examples"**
 
-**Example 2:**
-- Title: `City coverage ranking`
-- Query:
-```sql
-SELECT city, province,
-       COUNT(DISTINCT tower_id) AS tower_count,
-       ROUND(AVG(availability_pct), 2) AS avg_availability
-FROM V_DAILY_COVERAGE
-GROUP BY 1, 2
-ORDER BY 4 DESC;
-```
+### Step C11: Documentation Tile
 
-### Step C9: Legal Terms
+- Click **Add documentation**
+- Add a link entry:
+  - **Type:** Documentation
+  - **URL:** `https://nusatel.co.id/data-docs` (placeholder OK for demo)
+- Click **Save**
+- ✓ Auto-marks **"Add links to Documentation"**
 
-1. Scroll to **Legal Terms**
-2. Select **Snowflake Standard Terms** (or upload your custom terms)
+### Step C12: Legal Terms Tile
 
-### Step C10: Submit for Approval
+- Click **Add legal terms**
+- Choose one:
+  - **Snowflake Standard Terms** (recommended for public listings)
+  - **Custom Terms** (upload your own MSA / data licensing PDF)
+  - **Offline** (handled outside Snowflake)
+- Click **Save**
+- ✓ Auto-marks **"Add legal terms"**
 
-1. Review all fields — make sure nothing is missing (red indicators)
-2. Click **Submit for Approval**
+### Step C13: Attributes Tile
 
-> Snowflake Marketplace team reviews your listing (typically 1-3 business days).  
-> After approval → click **Publish** to make it live.
+- Click **Add attributes**
+- Fill in metadata fields, example:
+  - **Refresh frequency:** Daily
+  - **Time period:** Last 30 days
+  - **Data source:** First-party (NusaTel)
+  - **Geographic coverage:** Indonesia
+  - **Number of records:** ~8,000 daily snapshots
+- Click **Save**
+- ✓ Auto-marks **"Fill in the Attributes section"**
 
-### Step C11: After Approval — Publish
+### Step C14: Data Dictionary Tile *(optional but recommended)*
 
-1. You'll receive an email when approved
-2. Go back to **Provider Studio** → **Listings** → click your listing
-3. Click **Publish**
-4. Your listing is now LIVE on Snowflake Marketplace!
+- Click **Add featured objects from the data dictionary**
+- Select the view `V_DAILY_COVERAGE`
+- Check important columns: `technology`, `avg_download_mbps`, `avg_latency_ms`, `availability_pct`
+- Add a description for each column
+- Click **Save**
+
+### Step C15: Region Availability Tile
+
+- Click **Set region availability**
+- Choose **All Regions** for global reach
+  - Or select **Custom regions** → tick AP Southeast (Singapore, Jakarta) only
+- Click **Save**
+- ✓ Auto-marks **"Specify regional availability"**
+
+### Step C16: Video Tile *(optional, skip if none)*
+
+- Click **Add video** if you have a YouTube/Vimeo demo URL
+- Otherwise skip — this is optional
+
+### Step C17: Preview Your Listing
+
+- Click **Preview** at the top-right to see how consumers will see the listing
+- Verify title, subtitle, description, sample queries, etc.
+
+### Step C18: Submit for Approval
+
+- Once **all checklist items are green** ✓, the **Submit for approval** button (top-right) becomes active (bright blue)
+- Click **Submit for approval**
+- Snowflake Marketplace team reviews your listing (typically 1-3 business days)
+
+### Step C19: Publish (After Approval)
+
+- You'll receive an email when approved
+- Go back to **Provider Studio** → **Listings** → click your listing
+- The button now reads **Publish** — click it
+- Your listing is now LIVE on Snowflake Marketplace! 🎉
+
+> **Note for workshop:** For demo purposes you can stop at Step C18 (Submit for approval). Real approval takes 1-3 days. Or use a **Private Listing** (Part E) which publishes instantly without approval.
 
 ---
 
