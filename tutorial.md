@@ -81,19 +81,79 @@ A Provider Profile is your **brand identity** visible to consumers. Required for
 
 1. In **Provider Studio**, click the **Profiles** tab (top navigation)
 2. Click **+ Create Profile**
-3. Fill in:
+3. The **Create Profile** dialog opens. Fill in each field as explained below.
 
-| Field | Example Value |
+### Field-by-Field Guide
+
+#### 1. Company Icon *(optional but highly recommended)*
+The logo displayed next to your listings on Marketplace.
+- **Format:** square PNG (1:1 ratio), recommended 256×256 px or larger
+- **Background:** transparent or solid (avoid small text)
+- If skipped, a gray placeholder is shown — looks unprofessional
+
+#### 2. Company Name *(required)*
+The brand name consumers see on Marketplace.
+- Max ~50 characters
+- Use your business brand name, NOT your Snowflake account name
+- **Example:** `NusaTel Data`
+
+#### 3. Company Description *(required)*
+2-3 sentences describing your company and what data you offer.
+- Must be at least 2-3 sentences
+- Explain what your organization does + what you intend to offer on Marketplace
+- ⚠️ Must NOT direct consumers off-platform (no "visit our website to buy")
+- **Example:** `Indonesia's innovative telco — mobility, audience, and network insights from 80M+ subscribers.`
+
+#### 4. Consumer Contact Email *(required)*
+The email consumers see when they have questions about your data.
+- **Best practice:** use a **group email alias** with your business domain
+  - Good: `data-partnerships@nusatel.co.id`, `marketplace@nusatel.co.id`
+  - OK for demo: your personal email
+- Don't use a personal email in production — depends on one person being available
+
+#### 5. Support Link or Email *(optional but recommended)*
+Link to a dedicated support page or support group email.
+- Can be a URL: `https://nusatel.co.id/data-support`
+- Or an email: `data-support@nusatel.co.id`
+- **Difference from Consumer Contact:**
+  - Consumer Contact = pre-sales / general inquiries
+  - Support = post-sales / technical issues
+
+#### 6. Privacy Link *(optional)*
+Link to your company's privacy policy / terms of use page.
+- **Example:** `https://nusatel.co.id/privacy`
+- Important if your data involves any PII or consumer behavioral data
+- For demo, you may use a placeholder: `https://www.snowflake.com/privacy-policy/`
+
+#### 7. Business Contact Email *(required for paid listings)*
+Email of your business / commercial team. Snowflake sends notifications about:
+- Listing approval / denial
+- Consumer subscriptions to paid listings
+- Revenue and payout updates
+- **Example:** `business@nusatel.co.id`
+
+#### 8. Technical Contact Email *(required)*
+Email of your technical / data engineering team. Snowflake sends notifications about:
+- Share or replication issues
+- Auto-fulfillment failures
+- Data quality alerts
+- **Example:** `data-engineering@nusatel.co.id`
+- It's OK for Business Contact and Technical Contact to be the same email for small teams
+
+### Demo Copy-Paste Values (for NusaTel workshop)
+
+| Field | Value |
 |---|---|
-| Profile Name | `NusaTel Data` |
-| Description | `Indonesia's innovative telco — mobility, audience, and network insights from 80M+ subscribers.` |
-| Logo | Upload a square PNG (e.g., company logo) |
-| Website | `https://nusatel.co.id` |
-| Business Contact | `data-partnerships@nusatel.co.id` |
-| Technical Contact | `data-engineering@nusatel.co.id` |
-| Support URL | `https://nusatel.co.id/data-support` |
+| Company Icon | Upload any square PNG logo |
+| Company Name | `NusaTel Data` |
+| Company Description | `Indonesia's innovative telco — mobility, audience, and network insights from 80M+ subscribers.` |
+| Consumer Contact Email | `your.email@domain.com` |
+| Support Link or Email | `support@nusatel.co.id` |
+| Privacy Link | `https://www.snowflake.com/privacy-policy/` |
+| Business Contact Email | `your.email@domain.com` |
+| Technical Contact Email | `your.email@domain.com` |
 
-4. Click **Save**
+4. Click **Next** to continue, then confirm and **Save** the profile.
 
 > You only need ONE profile. It can be reused across many listings.
 
